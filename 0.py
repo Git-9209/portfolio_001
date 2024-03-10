@@ -1,4 +1,4 @@
-print(0)
+import os
+
+l = os.listdir('')
 print(1)
-print(2)
-print(3)

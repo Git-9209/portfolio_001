@@ -1,4 +1,4 @@
 import os
 
 l = os.listdir('')
-print(1)
+print(2+2)

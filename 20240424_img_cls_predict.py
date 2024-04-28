@@ -19,7 +19,7 @@ transform = transforms.Compose([
 test_dataset = datasets.ImageFolder(root=custom_testset_path, transform=transform)
 
 # 데이터 로더를 생성합니다
-test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
+test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
 
 # # 사전 훈련된 모델을 로드합니다 (예: ResNet18)
 # model = models.resnet18(pretrained=True)
@@ -47,7 +47,7 @@ with torch.no_grad():
         _, predicted = torch.max(outputs, 1) # 각 열(1)마다 최댓값의 위치를 예측값으로 사용하겠다는 의미
         total += labels.size(0)
         correct += (predicted == labels).sum().item()
-        print(i, len(test_loader), labels)
+        print(i, len(test_loader), labels.tolist(), predicted.tolist())
         i+=1
 
 ACC = correct / total

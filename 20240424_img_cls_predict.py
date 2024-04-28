@@ -19,7 +19,7 @@ transform = transforms.Compose([
 test_dataset = datasets.ImageFolder(root=custom_testset_path, transform=transform)
 
 # 데이터 로더를 생성합니다
-test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
+test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
 
 # # 사전 훈련된 모델을 로드합니다 (예: ResNet18)
 # model = models.resnet18(pretrained=True)
